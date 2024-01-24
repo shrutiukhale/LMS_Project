@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Update Profile</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="admin_style.css">
+
+</head>
+<body>
+
+   <header class="header">
+      
+      <section class="flex">
+         <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            </div>
+   
+         <a href="dashboard.html" class="logo">Admin.</a>
+   
+         <form action="/admin/search_page.html" method="post" class="search-form">
+            <input type="text" name="search" placeholder="search here..." required maxlength="100">
+            <button type="submit" class="fas fa-search" name="search_btn"></button>
+         </form>
+   
+         <div class="icons">
+            
+            <div id="notifications-btn" class="fa-solid fa-bell">
+               <span class="icon-button__badge">2</span>
+            </div>
+                        
+            <div id="search-btn" class="fas fa-search"></div>
+            <div id="user-btn" class="fas fa-user"></div>
+            <div id="toggle-btn" class="fas fa-sun"></div>
+         </div>
+         <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p style="font-size: 16px;">Some text in the Modal..</p>
+              <hr/>
+              <p style="font-size: 16px;">Some text in the Modal..</p>
+            </div>
+          
+          </div>
+         
+         <div class="profile">
+           
+            <img src="images/download.jpeg" alt="">
+            <h3>admin name</h3>
+            <span></span>
+            <a href="profile.html" class="btn">view profile</a>
+            <div class="flex-btn">
+               <!-- <a href="login.php" class="option-btn">login</a>
+               <a href="register.php" class="option-btn">register</a> -->
+            </div>
+            <a href="" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
+            
+            <h3>please login or register</h3>
+             <div class="flex-btn">
+               <a href="login.html" class="option-btn">login</a>
+               <a href="register.html" class="option-btn">register</a>
+            </div>
+            
+         </div>
+   
+      </section>
+   
+   </header>
+   
+   <!-- header section ends -->
+   
+   <!-- side bar section starts  -->
+   
+   <div class="side-bar">
+   
+      <div class="close-side-bar">
+         <i class="fas fa-times"></i>
+      </div>
+   
+      <div class="profile">
+            <img src="/images/download.jpeg" alt="">
+            <h3>admin name</h3>
+            <span>Admin</span>
+            <!-- <a href="profile.php" class="btn">view profile</a> -->
+            
+            <!-- <h3>please login or register</h3> -->
+             <div class="flex-btn">
+               <!-- <a href="login.php" class="option-btn">login</a>
+               <a href="register.php" class="option-btn">register</a> -->
+            </div>
+            
+      </div>
+   
+      <nav class="navbar">
+         <a href="dashboard.html"><i class="fas fa-home"></i><span>home</span></a>
+         <a href="playlists.html" onclick="SwapDivsWithClick"><i class="fa-solid fa-bars-staggered"></i><span>playlists</span></a>
+         <a href="contents.html"><i class="fa-solid fa-book-open-reader"></i><span>contents</span></a>
+         <a href="students.html"><i class="fa-solid fa-graduation-cap"></i><span>students</span></a>
+         <a href="report.html"><i class="fa-solid fa-file-lines"></i><span>report</span></a>
+         <a href="notification.html"><i class="fa-solid fa-bell"></i><span>Add Notification</span></a>
+         <a href="about.html"><i class="fas fa-question"></i><span>about</span></a>
+         <a href="contact.html"><i class="fas fa-headset"></i><span>contact</span></a>
+         <!-- <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');"><i class="fas fa-right-from-bracket"></i><span>logout</span></a> -->
+      </nav>
+   
+   </div>
+   
+   <!-- side bar section ends -->
+
+<!-- register section starts  -->
+
+<section class="form-container" style="min-height: calc(100vh - 19rem);">
+
+   <form class="register" action="" method="post" enctype="multipart/form-data">
+      <h3>update profile</h3>
+      <div class="flex">
+         <div class="col">
+            <p>your name </p>
+            <input type="text" name="name" placeholder="admin name" maxlength="50"  class="box">
+            <p>your profession </p>
+            <select name="profession" class="box">
+               <option value="" selected>selected opt</option>
+               <option value="developer">web developer</option>
+               <option value="front end developer">front end developer</option>
+               <option value="backend developer">backend developer</option>
+               <option value="full stack developer">full stack developer</option>
+               <option value="ML">ML</option>
+               <option value="Analyst">Analyst</option>
+            </select>
+            <p>your email </p>
+            <input type="email" name="email" placeholder="<?= $fetch_profile['email']; ?>" maxlength="20"  class="box">
+         </div>
+         <div class="col">
+            <p>old password :</p>
+            <input type="password" name="old_pass" placeholder="enter your old password" maxlength="20"  class="box">
+            <p>new password :</p>
+            <input type="password" name="new_pass" placeholder="enter your new password" maxlength="20"  class="box">
+            <p>confirm password :</p>
+            <input type="password" name="cpass" placeholder="confirm your new password" maxlength="20"  class="box">
+         </div>
+      </div>
+      <p>update pic :</p>
+      <input type="file" name="image" accept="image/*"  class="box">
+      <input type="submit" name="submit" value="update now" class="btn">
+   </form>
+
+</section>
+
+<!-- registe section ends -->
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2024 by <span>RSL Pvt Lmt</span> | all rights reserved!
+
+</footer>
+
+<script src="admin_script.js"></script>
+   
+</body>
+</html>

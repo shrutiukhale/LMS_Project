@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+     
+        <!-- font awesome cdn link  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+     
+        <!-- custom css file link  -->
+        <link rel="stylesheet" href="admin_style.css">
+     
+     </head>
+         <body oncontextmenu='return false' class='snippet-body'>
+            <header class="header">
+      
+                <section class="flex">
+                   <div class="icons">
+                      <div id="menu-btn" class="fas fa-bars"></div>
+                      </div>
+             
+                   <a href="dashboard.html" class="logo">Admin.</a>
+             
+                   <form action="/admin/search_page.html" method="post" class="search-form">
+                      <input type="text" name="search" placeholder="search here..." required maxlength="100">
+                      <button type="submit" class="fas fa-search" name="search_btn"></button>
+                   </form>
+             
+                   <div class="icons">
+                      
+                      <div id="notifications-btn" class="fa-solid fa-bell">
+                         <span class="icon-button__badge">2</span>
+                      </div>
+                                  
+                      <div id="search-btn" class="fas fa-search"></div>
+                      <div id="user-btn" class="fas fa-user"></div>
+                      <div id="toggle-btn" class="fas fa-sun"></div>
+                   </div>
+                   <div id="myModal" class="modal">
+          
+                      <!-- Modal content -->
+                      <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p style="font-size: 16px;">Some text in the Modal..</p>
+                        <hr/>
+                        <p style="font-size: 16px;">Some text in the Modal..</p>
+                      </div>
+                    
+                    </div>
+                   
+                   <div class="profile">
+                     
+                      <img src="images/download.jpeg" alt="">
+                      <h3>admin name</h3>
+                      <span></span>
+                      <a href="profile.html" class="btn">view profile</a>
+                      <div class="flex-btn">
+                         <!-- <a href="login.php" class="option-btn">login</a>
+                         <a href="register.php" class="option-btn">register</a> -->
+                      </div>
+                      <a href="../index.php" class="btn">logout</a>
+                      
+                    
+                       <!-- <div class="flex-btn">
+                         <a href="login.html" class="option-btn">login</a>
+                         <a href="register.html" class="option-btn">register</a>
+                      </div> -->
+                      
+                   </div>
+             
+                </section>
+             
+             </header>
+             
+             <!-- header section ends -->
+             
+             <!-- side bar section starts  -->
+             
+             <div class="side-bar">
+             
+                <div class="close-side-bar">
+                   <i class="fas fa-times"></i>
+                </div>
+             
+                <div class="profile">
+                      <img src="/images/download.jpeg" alt="">
+                      <!-- <h3>admin name</h3> -->
+                      <span>Admin</span>
+                      <!-- <a href="profile.php" class="btn">view profile</a> -->
+                      
+                      <!-- <h3>please login or register</h3> -->
+                       <div class="flex-btn">
+                         <!-- <a href="login.php" class="option-btn">login</a>
+                         <a href="register.php" class="option-btn">register</a> -->
+                      </div>
+                      
+                </div>
+                <nav class="navbar">
+         
+                  <a href="dashboard.html"><i class="fas fa-home"></i><span>home</span></a>
+                  <a href="students.php"><i class="fa-solid fa-graduation-cap"></i><span>students</span></a>
+                  <a href="report.html"><i class="fa-solid fa-file-lines"></i><span>report</span></a>
+                  <a href="notification.html"><i class="fa-solid fa-bell"></i><span>Notification</span></a>
+                 
+                  <!-- <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');"><i class="fas fa-right-from-bracket"></i><span>logout</span></a> -->
+               </nav>
+             
+             </div>
+
+             <section class="playlist-form">
+
+                <h1 class="heading">Assign course</h1>
+        <span class="box">
+          <div class="tutor">
+             <img src="images/pic-5.jpg" alt="">
+             <div class="stu-box">
+                <h3>student4</h3>
+                <span>developer</span>
+             </div>
+          </div>
+          
+        </span>
+                <form action="" method="post" enctype="multipart/form-data">
+                   <p>Student name <span>*</span></p>
+                   <select name="status" class="box" required>
+                      <option value="" selected disabled>select student name </option>
+                      <option value="">student1</option>
+                      <option value="">student2</option>
+                      <option value="">student3</option>
+                      <option value="">student4</option>
+                   </select>
+                   <p>course title <span>*</span></p>
+                   <select name="status" class="box" required>
+                    <option value="" selected disabled>select course name </option>
+                    <option value="">course1</option>
+                    <option value="">course2</option>
+                    <option value="">course3</option>
+                    <option value="">course4</option>
+                 </select>                   
+                   <input type="submit" value="Assign course" name="submit" class="btn">
+                </form>
+             
+             </section>
+    
+
+</body>
+<!-- 
+<footer class="footer">
+
+    &copy; copyright @ 2024 by <span>RSL Pvt Lmt</span> | all rights reserved!
+ 
+ </footer> -->
+ 
+ <script src="admin_script.js"></script>
+
+</html>
