@@ -1,220 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: medium;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
 
-        #notification-container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            position: relative;
-        }
-
-        .notification {
-            margin-bottom: 15px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            position: relative;
-            transition: background-color 0.3s ease;
-        }
-
-        .notification:hover {
-            background-color: #f9f9f9;
-        }
-
-        .notification.unread {
-            background-color: #e6f7ff;
-        }
-
-        .notification header {
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .notification time {
-            color: #888;
-            font-size: 12px;
-        }
-
-        #notification-count {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background-color: #007bff;
-            color: #fff;
-            font-size: 12px;
-            padding: 5px 10px;
-            border-radius: 50%;
-        }
-
-        select, button {
-            margin-top: 10px;
-        }
-    </style>
    <title>Notication</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
    <link rel="stylesheet" href="css/style.css">
+      <style>
+          <style>
+      body {
+         font-family: 'Nunito', sans-serif;
+         font-size: large;
+         margin: 0;
+         padding: 0;
+         background-color: #f4f4f4;
+         font-size: 16px;
+         font-weight: bold;
+         
+      }
 
+      /* Header Styles */
+      .btn {
+         text-decoration: none;
+         background-color: #007bff;
+         color: #fff;
+         padding: 5px 10px;
+         border-radius: 5px;
+         margin-left: 10px;
+      }
+
+      .flex-btn {
+         margin-left: auto;
+      }
+
+      /* Notification Form Styles */
+      #notification-container {
+         display: flex;
+         justify-content: center;
+         /* align-items: center; */
+         /* height: 100vh; */
+      }
+
+      #notification-form {
+         max-width: 650px;
+         width: 100%;
+         padding: 20px;
+         background-color: #fff;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         border-radius: 8px;
+         text-align: center;
+      }
+
+      #notification-form h2 {
+         margin-bottom: 20px;
+         color: #333;
+      }
+
+      label {
+         display: block;
+         margin-bottom: 8px;
+         text-align: left;
+         color: #333;
+      }
+
+      select,
+      textarea {
+         width: 100%;
+         padding: 8px;
+         margin-bottom: 16px;
+         box-sizing: border-box;
+         border: 1px solid #ddd;
+         border-radius: 4px;
+         font-size: 16px;
+      }
+
+      button {
+         background-color: #007bff;
+         color: #fff;
+         padding: 10px 20px;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         font-size: 16px;
+      }
+
+      button:hover {
+         background-color: #0056b3;
+      }
+
+      body {
+         font-family: 'Nunito', sans-serif;
+         font-size: large;
+      }
+
+
+   </style>
 </head>
+
 <body>
 
-<header class="header">
-   
-   <section class="flex">
+   <header class="header">
 
-      <a href="home.html" class="logo">RSL Solution </a>
+      <section class="flex">
 
-      <!-- <form action="search.html" method="post" class="search-form">
-         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
-         <button type="submit" class="fas fa-search"></button>
-      </form> -->
+         <a href="home.html" class="logo">RSL Solution </a>
+         <div class="icons">
 
-      <div class="icons">
-       
-         <div id="notification-btn" class="fa-regular fa-bell"></div>
-         <div id="menu-btn" class="fas fa-bars"></div>
-         <div id="search-btn" class="fas fa-search"></div>
-         <div id="user-btn" class="fas fa-user"></div>
-         <div id="toggle-btn" class="fas fa-sun"></div>
-      </div>
-
-     
-   <div class="profile">
-      <img src="images/pic-1.jpg" class="image" alt="">
-      <p class="role">Super Admin </p>
-         <a href="profile.php" class="btn">view profile</a>
-         <div class="flex-btn">
-            <a href="../index.php" class="option-btn">logout</a>
+            <div id="unread-count" class="fa-regular fa-bell"></div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search"></div>
+            <div id="user-btn" class="fas fa-user"></div>
+            <div id="toggle-btn" class="fas fa-sun"></div>
          </div>
+
+
+         <div class="profile">
+            <img src="images/pic-1.jpg" class="image" alt="">
+            <p class="role">Super Admin </p>
+            <a href="profile.html" class="btn">view profile</a>
+            <div class="flex-btn">
+               <a href="../index.php" class="option-btn">logout</a>
+            </div>
+         </div>
+
+      </section>
+
+   </header>
+
+   <div class="side-bar">
+
+      <div id="close-btn">
+         <i class="fas fa-times"></i>
       </div>
 
-   </section>
 
-</header>   
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="">
+         <p class="role">Super Admin </p>
+      </div>
 
-<section class="practical">
+      <nav class="navbar">
+         <a href="home.php"><i class="fas fa-home"></i><span>home</span></a>
+         <!--Newly created-->
+         <a href="teachers.php"><i class="fas fa-chalkboard-user"></i><span>Admins</span></a>
+         <a href="courses.php"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+         <!--Newly created-->
+         <a href="report.php"><i class="fa-regular fa-eye"></i><span>Reports</span></a>
+         <!--Newly created-->
+         <a href="notification.php"><i class="fa-regular fa-bell"></i><span>Notification</span></a>
+         <!--<a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a>
+    <a href="about.html"><i class="fas fa-question"></i><span>about</span></a>-->
+      </nav>
 
-   <div class="box-container">
-
-      <div id="notification-container">
-         <h1>Notification Center</h1>
-         <!-- <p>Unread Notifications: <span id="notification-count"class="fa-regular fa-bell">0</span></p>
-  -->
-         <select id="recipient-type">
-             <option value="all">All Students</option>
-             <option value="course">Course Wise</option>
-             <option value="admin">Admin Wise</option>
+   </div>
+          <div id="notification-container" class="notification-container">
+      <!-- Notification Form -->
+      <div id="notification-form">
+         <h2 style="text-align:center">Send Notification</h2>
+       
+         <label for="recipient-type">Select Recipient Type:</label>
+         <select id="recipient-type ">
+            <option value="admins">Admins</option>
+            <option value="admin wise student">Admin wise student</option>
+            <option value="all students">all students</option>
+            <option value="java-course">Java Course Students</option>
+            <option value="python-course">Python Course Students</option>
+            <option value="c-course">C Course Students</option>
          </select>
- 
-         <select id="recipient-list" style="display:none;"></select>
- 
-         <input type="text" id="notification-text" placeholder="Type your notification here">
-
          <br>
-
+         <label for="recipient-type">Select Recipient:</label> 
+   <select id="recipient-type">
+      <option value="admins">Admin 1</option>
+   </select>
          <br>
- 
+         <label for="notification-message">Notification Message:</label>
+         <textarea id="notification-message" rows="6"></textarea>
+         <br>
          <button onclick="sendNotification()"class="inline-btn">Send Notification</button>
- 
-         <div id="notification-list"></div>
-     </div>
- 
-     <script>
-         let notificationCount = 0;
- 
+      </div>
+
+      <!-- Unread Notification Count -->
+      <div id="unread-count" class="unread-count"></div>
+
+      <!-- Notification Container -->
+  </div>
+
+      <script>
+         // Sample data for recipients
+         var recipients = {
+            admins: ['admin1', 'admin2', 'admin3', 'all admins'],
+            'admin wise student': ['admin1wiseStudents', 'admin2wiseStudents', 'admin3wiseStudents', 'all adminswise Students'],
+            'all students': ['all students'],
+            'java-course': ['JavaStudent1', 'JavaStudent2', 'JavaStudent3', 'all java course students'],
+            'python-course': ['PythonStudent1', 'PythonStudent2', 'PythonStudent3', 'all python course students'],
+            'c-course': ['CStudent1', 'CStudent2', 'CStudent3', 'all c course students'],
+         };
+
+         // Unread notification count
+         var unreadCount = 0;
+
+         // Update recipients dropdown based on the selected recipient type
+         function updateRecipients() {
+            var recipientType = document.getElementById('recipient-type').value;
+            var recipientDropdown = document.getElementById('recipient');
+            recipientDropdown.innerHTML = '';
+
+            recipients[recipientType].forEach(function (recipient) {
+               var option = document.createElement('option');
+               option.value = recipient;
+               option.text = recipient;
+               recipientDropdown.add(option);
+            });
+         }
+
+         // Send a notification to the selected recipient
          function sendNotification() {
-             const recipientType = document.getElementById('recipient-type').value;
-             const recipientList = document.getElementById('recipient-list').value;
-             const notificationText = document.getElementById('notification-text').value;
- 
-             if (notificationText.trim() === '') {
-                 alert('Please enter a notification message.');
-                 return;
-             }
- 
-             // Simulate sending notification to admin and students
-             const notification = {
-                 text: notificationText,
-                 timestamp: new Date(),
-                 read: false
-             };
- 
-             displayNotification(notification);
-             updateNotificationCount();
+            var recipientType = document.getElementById('recipient-type').value;
+            var recipient = document.getElementById('recipient').value;
+            var message = document.getElementById('notification-message').value;
+
+            // Check if the message is not empty
+            if (message.trim() === '') {
+               alert('Please enter a notification message.');
+               return;
+            }
+
+            // Display the notification on the page
+            displayNotification(message, recipient);
+
+            // Increment unread notification count
+            unreadCount++;
+            updateUnreadCount();
+
+            // Clear the form fields
+            document.getElementById('notification-message').value = '';
+
+            // For demonstration purposes, log the notification to the console
+            console.log(`Notification sent to ${recipient} (${recipientType}): ${message}`);
          }
- 
-         function displayNotification(notification) {
-             const notificationList = document.getElementById('notification-list');
-             const recipientList = document.getElementById('recipient-list');
-             const recipientType = document.getElementById('recipient-type').value;
- 
-             const notificationElement = document.createElement('div');
-             notificationElement.className = 'notification';
-             if (!notification.read) {
-                 notificationElement.classList.add('unread');
-             }
- 
-             notificationElement.innerHTML = `
-                 <header>${notification.text}</header>
-                 <time>${formatTimestamp(notification.timestamp)}</time>
-             `;
- 
-             notificationList.prepend(notificationElement);
- 
-             // In a real system, you would determine the recipients and update the recipient list accordingly.
-             // This is just a basic example.
-             if (recipientType === 'course') {
-                 // Update the course list based on the backend data
-                 // recipientList.innerHTML = '<option value="course1">Course 1</option><option value="course2">Course 2</option>';
-             } else if (recipientType === 'admin') {
-                 // Update the admin list based on the backend data
-                 // recipientList.innerHTML = '<option value="admin1">Admin 1</option><option value="admin2">Admin 2</option>';
-             }
+
+         // Display the notification on the page
+         function displayNotification(message, recipient) {
+            var notificationContainer = document.getElementById('notification-container');
+            var notificationElement = document.createElement('div');
+            notificationElement.className = 'notification';
+            notificationElement.innerHTML = `<strong>${recipient}:</strong> ${message}`;
+            notificationContainer.appendChild(notificationElement);
          }
- 
-         function updateNotificationCount() {
-             notificationCount++;
-             document.getElementById('notification-count').textContent = notificationCount;
+
+         // Update the unread notification count on the page
+         function updateUnreadCount() {
+            var unreadCountElement = document.getElementById('unread-count');
+            unreadCountElement.textContent = ` ${unreadCount}`;
+            // unreadCountElement.textContent = `Unread Notifications: ${unreadCount}`;
          }
- 
-         function formatTimestamp(timestamp) {
-             const options = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
-             return new Intl.DateTimeFormat('en-US', options).format(timestamp);
-         }
- 
-         // Handle recipient type change
-         document.getElementById('recipient-type').addEventListener('change', function () {
-             const recipientList = document.getElementById('recipient-list');
-             const recipientType = this.value;
- 
-             if (recipientType === 'course' || recipientType === 'admin') {
-                 recipientList.style.display = 'block';
-             } else {
-                 recipientList.style.display = 'none';
-             }
-         });
-     </script>
-</section> 
+
+         // Attach event listener to update recipients dropdown when recipient type changes
+         document.getElementById('recipient-type').addEventListener('change', updateRecipients);
+
+         // Initialize recipients dropdown on page load
+         updateRecipients();
+      </script>
+
+      <!-- custom js file link  -->
+      <script src="js/script.js"></script>
 
 
-<!-- custom js file link  -->
-<script src="js/script.js"></script>
+   </body>
 
-<?php include 'sidebar.php'; ?>
-   
-</body>
 </html>
