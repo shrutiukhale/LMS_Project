@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+     
+        <!-- font awesome cdn link  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+     
+        <!-- custom css file link  -->
+        <link rel="stylesheet" href="admin_style.css">
+     
+     </head>
+         <body oncontextmenu='return false' class='snippet-body'>
+            <header class="header">
+      
+                <section class="flex">
+                   <div class="icons">
+                      <div id="menu-btn" class="fas fa-bars"></div>
+                      </div>
+             
+                   <a href="dashboard.html" class="logo">RSL Solution</a>
+             
+                   <form action="/admin/search_page.html" method="post" class="search-form">
+                      <input type="text" name="search" placeholder="search here..." required maxlength="100">
+                      <button type="submit" class="fas fa-search" name="search_btn"></button>
+                   </form>
+             
+                   <div class="icons">
+                      
+                      <div id="notifications-btn" class="fa-solid fa-bell">
+                         <span class="icon-button__badge">2</span>
+                      </div>
+                                  
+                      <div id="search-btn" class="fas fa-search"></div>
+                      <div id="user-btn" class="fas fa-user"></div>
+                      <div id="toggle-btn" class="fas fa-sun"></div>
+                   </div>
+                   <div id="myModal" class="modal">
+          
+                      <!-- Modal content -->
+                      <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p style="font-size: 16px;">Some text in the Modal..</p>
+                        <hr/>
+                        <p style="font-size: 16px;">Some text in the Modal..</p>
+                      </div>
+                    
+                    </div>
+                   
+                    <div class="profile">
+                        <img src="images/pic-1.jpg" class="image" alt="">
+                        <p class="role">Admin </p>  
+                        <a href="profile.html" class="btn">view profile</a>
+                      <div class="flex-btn">
+                         <!-- <a href="login.php" class="option-btn">login</a>
+                         <a href="register.php" class="option-btn">register</a> -->
+                      </div>
+                      <a href="../index.php" class="btn">logout</a>
+                      
+        
+                      
+                   </div>
+             
+                </section>
+             
+             </header>
+             
+             <!-- header section ends -->
+             
+             <!-- side bar section starts  -->
+             
+             <div class="side-bar">
+             
+                <div class="close-side-bar">
+                   <i class="fas fa-times"></i>
+                </div>
+             
+                <div class="profile">
+                    <img src="images/pic-1.jpg" class="image" alt="">
+                    <p class="role">Admin </p>
+                    
+                       <!-- <a href="profile.php" class="btn">view profile</a> -->
+                      
+                      <!-- <h3>please login or register</h3> -->
+                       <div class="flex-btn">
+                         <!-- <a href="login.php" class="option-btn">login</a>
+                         <a href="register.php" class="option-btn">register</a> -->
+                      </div>
+                      
+                </div>
+                <nav class="navbar">
+         
+                    <a href="dashboard.html"><i class="fas fa-home"></i><span>home</span></a>
+                    <a href="students.php"><i class="fa-solid fa-graduation-cap"></i><span>students</span></a>
+                    <a href="report.html"><i class="fa-solid fa-file-lines"></i><span>report</span></a>
+                    <a href="notification.html"><i class="fa-solid fa-bell"></i><span>Notification</span></a>
+                   
+                    <!-- <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');"><i class="fas fa-right-from-bracket"></i><span>logout</span></a> -->
+                 </nav>
+             
+             </div>
+             <a href="Add_notification.html" class="option-btn">Add Notification</a>
+    <section class="section-50">
+        <div class="container">
+            <h3 class="m-b-50 heading-line" style="font-size: 18px;">Notifications <i class="fa fa-bell text-muted"></i>  </h3>
+            <h3 class="m-b-50 heading-line" >old notification </h3>
+        
+
+
+            <div class="notification-ui_dd-content">
+                <div class="notification-list notification-list--unread">
+                    <div class="notification-list_content">
+                        <div class="notification-list_img">
+                            <img src="https://i.imgur.com/zYxDCQT.jpg" alt="admin">
+                        </div>
+                        <div class="notification-list_detail">
+                            <p><b>Admin</b></p>
+                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, dolorem.</p>
+                            <p class="text-muted"><small>10 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="notification-list notification-list--unread">
+                    <div class="notification-list_content">
+                        <div class="notification-list_img">
+                            <img src="https://i.imgur.com/zYxDCQT.jpg" alt="admin">
+                        </div>
+                        <div class="notification-list_detail">
+                            <p><b>Admin</b></p>
+                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, dolorem.</p>
+                            <p class="text-muted"><small>10 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="notification-list notification-list--unread">
+                    <div class="notification-list_content">
+                        <div class="notification-list_img">
+                            <img src="https://i.imgur.com/zYxDCQT.jpg" alt="admin">
+                        </div>
+                        <div class="notification-list_detail">
+                            <p><b>Admin</b></p>
+                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, dolorem.</p>
+                            <p class="text-muted"><small>10 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="notification-list notification-list--unread">
+                    <div class="notification-list_content">
+                        <div class="notification-list_img">
+                            <img src="https://i.imgur.com/zYxDCQT.jpg" alt="admin">
+                        </div>
+                        <div class="notification-list_detail">
+                            <p><b>Admin</b></p>
+                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, dolorem.</p>
+                            <p class="text-muted"><small>10 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="notification-list notification-list--unread">
+                    <div class="notification-list_content">
+                        <div class="notification-list_img">
+                            <img src="https://i.imgur.com/zYxDCQT.jpg" alt="admin">
+                        </div>
+                        <div class="notification-list_detail">
+                            <p><b>Admin</b></p>
+                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, dolorem.</p>
+                            <p class="text-muted"><small>10 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </section>
+
+</body>
+
+<!-- <footer class="footer">
+
+    &copy; copyright @ 2024 by <span>RSL Pvt Lmt</span> | all rights reserved!
+ 
+ </footer> -->
+ 
+ <script src="admin_script.js"></script>
+
+</html>
