@@ -9,9 +9,8 @@
    <title>Notication</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
    <link rel="stylesheet" href="css/style.css">
-      <style>
-          <style>
-      body {
+   <style>
+      <style>body {
          font-family: 'Nunito', sans-serif;
          font-size: large;
          margin: 0;
@@ -19,7 +18,7 @@
          background-color: #f4f4f4;
          font-size: 16px;
          font-weight: bold;
-         
+
       }
 
       /* Header Styles */
@@ -95,8 +94,6 @@
          font-family: 'Nunito', sans-serif;
          font-size: large;
       }
-
-
    </style>
 </head>
 
@@ -107,8 +104,13 @@
       <section class="flex">
 
          <a href="home.html" class="logo">RSL Solution </a>
-         <div class="icons">
 
+         <form action="search.html" method="post" class="search-form">
+            <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+            <button type="submit" class="fas fa-search"></button>
+         </form>
+
+         <div class="icons">
             <div id="unread-count" class="fa-regular fa-bell"></div>
             <div id="menu-btn" class="fas fa-bars"></div>
             <div id="search-btn" class="fas fa-search"></div>
@@ -156,11 +158,11 @@
       </nav>
 
    </div>
-          <div id="notification-container" class="notification-container">
+   <div id="notification-container" class="notification-container">
       <!-- Notification Form -->
       <div id="notification-form">
          <h2 style="text-align:center">Send Notification</h2>
-       
+
          <label for="recipient-type">Select Recipient Type:</label>
          <select id="recipient-type ">
             <option value="admins">Admins</option>
@@ -171,104 +173,104 @@
             <option value="c-course">C Course Students</option>
          </select>
          <br>
-         <label for="recipient-type">Select Recipient:</label> 
-   <select id="recipient-type">
-      <option value="admins">Admin 1</option>
-   </select>
+         <label for="recipient-type">Select Recipient:</label>
+         <select id="recipient-type">
+            <option value="admins">Admin 1</option>
+         </select>
          <br>
          <label for="notification-message">Notification Message:</label>
          <textarea id="notification-message" rows="6"></textarea>
          <br>
-         <button onclick="sendNotification()"class="inline-btn">Send Notification</button>
+         <button onclick="sendNotification()" class="inline-btn">Send Notification</button>
       </div>
 
       <!-- Unread Notification Count -->
       <div id="unread-count" class="unread-count"></div>
 
       <!-- Notification Container -->
-  </div>
+   </div>
 
-      <script>
-         // Sample data for recipients
-         var recipients = {
-            admins: ['admin1', 'admin2', 'admin3', 'all admins'],
-            'admin wise student': ['admin1wiseStudents', 'admin2wiseStudents', 'admin3wiseStudents', 'all adminswise Students'],
-            'all students': ['all students'],
-            'java-course': ['JavaStudent1', 'JavaStudent2', 'JavaStudent3', 'all java course students'],
-            'python-course': ['PythonStudent1', 'PythonStudent2', 'PythonStudent3', 'all python course students'],
-            'c-course': ['CStudent1', 'CStudent2', 'CStudent3', 'all c course students'],
-         };
+   <script>
+      // Sample data for recipients
+      var recipients = {
+         admins: ['admin1', 'admin2', 'admin3', 'all admins'],
+         'admin wise student': ['admin1wiseStudents', 'admin2wiseStudents', 'admin3wiseStudents', 'all adminswise Students'],
+         'all students': ['all students'],
+         'java-course': ['JavaStudent1', 'JavaStudent2', 'JavaStudent3', 'all java course students'],
+         'python-course': ['PythonStudent1', 'PythonStudent2', 'PythonStudent3', 'all python course students'],
+         'c-course': ['CStudent1', 'CStudent2', 'CStudent3', 'all c course students'],
+      };
 
-         // Unread notification count
-         var unreadCount = 0;
+      // Unread notification count
+      var unreadCount = 0;
 
-         // Update recipients dropdown based on the selected recipient type
-         function updateRecipients() {
-            var recipientType = document.getElementById('recipient-type').value;
-            var recipientDropdown = document.getElementById('recipient');
-            recipientDropdown.innerHTML = '';
+      // Update recipients dropdown based on the selected recipient type
+      function updateRecipients() {
+         var recipientType = document.getElementById('recipient-type').value;
+         var recipientDropdown = document.getElementById('recipient');
+         recipientDropdown.innerHTML = '';
 
-            recipients[recipientType].forEach(function (recipient) {
-               var option = document.createElement('option');
-               option.value = recipient;
-               option.text = recipient;
-               recipientDropdown.add(option);
-            });
-         }
+         recipients[recipientType].forEach(function (recipient) {
+            var option = document.createElement('option');
+            option.value = recipient;
+            option.text = recipient;
+            recipientDropdown.add(option);
+         });
+      }
 
-         // Send a notification to the selected recipient
-         function sendNotification() {
-            var recipientType = document.getElementById('recipient-type').value;
-            var recipient = document.getElementById('recipient').value;
-            var message = document.getElementById('notification-message').value;
+      // Send a notification to the selected recipient
+      function sendNotification() {
+         var recipientType = document.getElementById('recipient-type').value;
+         var recipient = document.getElementById('recipient').value;
+         var message = document.getElementById('notification-message').value;
 
-            // Check if the message is not empty
-            if (message.trim() === '') {
-               alert('Please enter a notification message.');
-               return;
-            }
-
-            // Display the notification on the page
-            displayNotification(message, recipient);
-
-            // Increment unread notification count
-            unreadCount++;
-            updateUnreadCount();
-
-            // Clear the form fields
-            document.getElementById('notification-message').value = '';
-
-            // For demonstration purposes, log the notification to the console
-            console.log(`Notification sent to ${recipient} (${recipientType}): ${message}`);
+         // Check if the message is not empty
+         if (message.trim() === '') {
+            alert('Please enter a notification message.');
+            return;
          }
 
          // Display the notification on the page
-         function displayNotification(message, recipient) {
-            var notificationContainer = document.getElementById('notification-container');
-            var notificationElement = document.createElement('div');
-            notificationElement.className = 'notification';
-            notificationElement.innerHTML = `<strong>${recipient}:</strong> ${message}`;
-            notificationContainer.appendChild(notificationElement);
-         }
+         displayNotification(message, recipient);
 
-         // Update the unread notification count on the page
-         function updateUnreadCount() {
-            var unreadCountElement = document.getElementById('unread-count');
-            unreadCountElement.textContent = ` ${unreadCount}`;
-            // unreadCountElement.textContent = `Unread Notifications: ${unreadCount}`;
-         }
+         // Increment unread notification count
+         unreadCount++;
+         updateUnreadCount();
 
-         // Attach event listener to update recipients dropdown when recipient type changes
-         document.getElementById('recipient-type').addEventListener('change', updateRecipients);
+         // Clear the form fields
+         document.getElementById('notification-message').value = '';
 
-         // Initialize recipients dropdown on page load
-         updateRecipients();
-      </script>
+         // For demonstration purposes, log the notification to the console
+         console.log(`Notification sent to ${recipient} (${recipientType}): ${message}`);
+      }
 
-      <!-- custom js file link  -->
-      <script src="js/script.js"></script>
+      // Display the notification on the page
+      function displayNotification(message, recipient) {
+         var notificationContainer = document.getElementById('notification-container');
+         var notificationElement = document.createElement('div');
+         notificationElement.className = 'notification';
+         notificationElement.innerHTML = `<strong>${recipient}:</strong> ${message}`;
+         notificationContainer.appendChild(notificationElement);
+      }
+
+      // Update the unread notification count on the page
+      function updateUnreadCount() {
+         var unreadCountElement = document.getElementById('unread-count');
+         unreadCountElement.textContent = ` ${unreadCount}`;
+         // unreadCountElement.textContent = `Unread Notifications: ${unreadCount}`;
+      }
+
+      // Attach event listener to update recipients dropdown when recipient type changes
+      document.getElementById('recipient-type').addEventListener('change', updateRecipients);
+
+      // Initialize recipients dropdown on page load
+      updateRecipients();
+   </script>
+
+   <!-- custom js file link  -->
+   <script src="js/script.js"></script>
 
 
-   </body>
+</body>
 
 </html>
