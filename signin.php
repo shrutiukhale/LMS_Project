@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "lms"; 
+$dbname = "lms_db"; 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
@@ -17,21 +17,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
     $result = $conn->query($sql);
 
-    // if ($result->num_rows > 0) {
-    //     echo "<script>window.location.href = 'superadmin.html';</script>";
-    // } else {
-    //    echo "<script>window.alert('Wrong username or password');</script>";
-    // }
-
     
     if ($email === "superadmin@gmail.com" && $password === "12345678") {
-        echo "<script>window.location.href = 'superadmin/home.html';</script>";
+        echo "<script>window.location.href = 'superadmin/home.php';</script>";
     } 
     elseif ($email === "admin@gmail.com" && $password === "12345678") {
         echo "<script>window.location.href = 'admin/dashboard.html';</script>";
     } 
     elseif ($email === "student@gmail.com" && $password === "12345678") {
-        echo "<script>window.location.href = 'student/home.html';</script>";
+        echo "<script>window.location.href = 'student/home.php';</script>";
     }
     else {
         // $error_message = "Wrong username or password";
