@@ -13,13 +13,14 @@
    <link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
 
 <header class="header">
    
    <section class="flex">
 
-      <a href="home.html" class="logo">RSL Solution</a>
+      <a href="home.php" class="logo">RSL Solution</a>
 
       <form action="search.html" method="post" class="search-form">
          <input type="text" name="search_box" placeholder="search courses..." maxlength="100">
@@ -39,10 +40,7 @@
          <p class="role">Super Admin</p>
          <a href="profile.php" class="btn">view profile</a>
          <a href="../index.php" class="option-btn">logout</a>
-         <!-- <div class="flex-btn">
-            <a href="login.html" class="option-btn">login</a>
-            <a href="register.html" class="option-btn">register</a>
-         </div> -->
+         
       </div>
    </section>
 </header>   
@@ -116,13 +114,16 @@
                 </div>
 
                 <!-- View Profile link -->
-                <a href="teacher_profile.php?id=<?php echo $row['id']; ?>" class="inline-btn">View Profile</a>
+               
 
                 <!-- Delete form -->
-                <form method="post" class="delete-form">
+                <div class="tutor">
+                <a href="teacher_profile.php?id=<?php echo $row['id']; ?>"class="inline-btn">View</a>
+                <form method="post" class="delete-form" >
                     <input type="hidden" name="admin_id_to_delete" value="<?php echo $row['id']; ?>">
-                    <button type="submit" name="delete_admin" class="delete-btn" onclick="return confirm('Are you sure you want to delete this admin?')">Delete</button>
-                </form>
+                    <button type="submit" name="delete_admin" class="inline-delete-btn" onclick="return confirm('Are you sure you want to delete this admin?')">Delete</button>
+                 </form>
+                </div>
             </div>
 <?php
         }
@@ -136,15 +137,6 @@
    </div>
 </section>
 
-
-
-<!--<footer class="footer">
-
-   &copy; copyright @ 2024 by <span>RSL Pvt Lmt</span>| all rights reserved!
-
-</footer>-->
-
-<!-- custom js file link  -->
 
 <?php if (isset($successMessage)) : ?>
         <div class="success-message"><?php echo $successMessage; ?></div>

@@ -99,12 +99,12 @@ section{
 
 .inline-btn,
 .inline-option-btn,
-.inline-delete-btn{
+.inline-delete-btn,.delete-btn{
    display: inline-block;
 }
 
 .btn,
-.inline-btn{
+.inline-btn,.delete-btn{
    background-color: var(--main-color);
 }
 
@@ -1402,5 +1402,3 @@ section{
    font-size: 14px; /* Adjust the icon size as needed */
    margin-right: 5px; /* Optional: Space between icon and text */
 }
-
-

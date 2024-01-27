@@ -60,64 +60,9 @@
          <a href="update.php" class="inline-btn">update profile</a>
       </div>
    
-      <!-- <div class="box-container">
-   
-         <div class="box">
-            <div class="flex">
-               <i class="fas fa-bookmark"></i>
-               <div>
-                  <span>4</span>
-                  <p>saved playlist</p>
-               </div>
-            </div>
-            <a href="#" class="inline-btn">view playlists</a>
-         </div>
-   
-         <div class="box">
-            <div class="flex">
-               <i class="fas fa-heart"></i>
-               <div>
-                  <span>33</span>
-                  <p>videos liked</p>
-               </div>
-            </div>
-            <a href="#" class="inline-btn">view liked</a>
-         </div>
-   
-         <div class="box">
-            <div class="flex">
-               <i class="fas fa-comment"></i>
-               <div>
-                  <span>12</span>
-                  <p>videos comments</p>
-               </div>
-            </div>
-            <a href="#" class="inline-btn">view comments</a>
-         </div>
-   
-     </div> -->
    </div> 
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<footer class="footer">
-
-   &copy; copyright @ 2024 by <span>RSL Pvt Lmt</span> | all rights reserved!
-
-</footer>-->
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>

@@ -19,7 +19,7 @@
    
    <section class="flex">
 
-      <a href="home.html" class="logo"> RSL Solution </a>
+      <a href="home.php" class="logo"> RSL Solution </a>
 
       <form action="search.html" method="post" class="search-form">
          <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
@@ -54,31 +54,6 @@
    <h1 class="heading">quick options</h1>
 
    <div class="box-container">
-
-      <!-- <div class="box">
-         <h3 class="title">likes and comments</h3>
-         <p class="likes">total likes : <span>25</span></p>
-         <a href="#" class="inline-btn">view likes</a>
-         <p class="likes">total comments : <span>12</span></p>
-         <a href="#" class="inline-btn">view comments</a>
-         <p class="likes">saved playlists : <span>4</span></p>
-         <a href="#" class="inline-btn">view playlists</a>
-      </div>
-
-      <div class="box">
-         <h3 class="title">top categories</h3>
-         <div class="flex">
-            <a href="#"><i class="fas fa-code"></i><span>development</span></a>
-            <a href="#"><i class="fas fa-chart-simple"></i><span>business</span></a>
-            <a href="#"><i class="fas fa-pen"></i><span>design</span></a>
-            <a href="#"><i class="fas fa-chart-line"></i><span>marketing</span></a>
-            <a href="#"><i class="fas fa-music"></i><span>music</span></a>
-            <a href="#"><i class="fas fa-camera"></i><span>photography</span></a>
-            <a href="#"><i class="fas fa-cog"></i><span>software</span></a>
-            <a href="#"><i class="fas fa-vial"></i><span>science</span></a>
-         </div>
-      </div> -->
-
       <div class="box">
          <h3 class="title">popular topics</h3>
          <div class="flex">
@@ -94,7 +69,7 @@
       <div class="box">
          <h3 class="title">Add a Admin</h3>
          <p class="tutor">.......</p>
-         <a href="register.html" class="inline-btn">get started</a>
+         <a href="teachers.php" class="inline-btn">get started</a>
       </div>
 
    </div>
@@ -122,7 +97,7 @@
             <span>10 videos</span>
          </div>
          <h3 class="title">complete HTML tutorial</h3>
-         <a href="playlist.html" class="inline-btn">view playlist</a>
+         <a href="playlist.php" class="inline-btn">view playlist</a>
       </div>
 
       <div class="box">
@@ -138,7 +113,7 @@
             <span>10 videos</span>
          </div>
          <h3 class="title">complete CSS tutorial</h3>
-         <a href="playlist.html" class="inline-btn">view playlist</a>
+         <a href="playlist.php" class="inline-btn">view playlist</a>
       </div>
 
       <div class="box">
@@ -154,84 +129,15 @@
             <span>10 videos</span>
          </div>
          <h3 class="title">complete JS tutorial</h3>
-         <a href="playlist.html" class="inline-btn">view playlist</a>
+         <a href="playlist.php" class="inline-btn">view playlist</a>
       </div>
-<!-- 
-      <div class="box">
-         <div class="tutor">
-            <img src="images/pic-5.jpg" alt="">
-            <div class="info">
-               <h3>Admin4</h3>
-               <span>05-01-2024</span>
-            </div>
-         </div>
-         <div class="thumb">
-            <img src="images/thumb-4.png" alt="">
-            <span>10 videos</span>
-         </div>
-         <h3 class="title">complete Boostrap tutorial</h3>
-         <a href="playlist.html" class="inline-btn">view playlist</a>
-      </div>
-
-      <div class="box">
-         <div class="tutor">
-            <img src="images/pic-6.jpg" alt="">
-            <div class="info">
-               <h3>Admin5</h3>
-               <span>05-01-2024</span>
-            </div>
-         </div>
-         <div class="thumb">
-            <img src="images/thumb-5.png" alt="">
-            <span>10 videos</span>
-         </div>
-         <h3 class="title">complete JQuery tutorial</h3>
-         <a href="playlist.html" class="inline-btn">view playlist</a>
-      </div>
-
-      <div class="box">
-         <div class="tutor">
-            <img src="images/pic-7.jpg" alt="">
-            <div class="info">
-               <h3>Admin6</h3>
-               <span>05-01-2024</span>
-            </div>
-         </div>
-         <div class="thumb">
-            <img src="images/thumb-6.png" alt="">
-            <span>10 videos</span>
-         </div>
-         <h3 class="title">complete SASS tutorial</h3>
-         <a href="playlist.html" class="inline-btn">view playlist</a>
-      </div>-->
-
    </div> 
 
    <div class="more-btn">
-      <a href="courses.html" class="inline-option-btn">view all courses</a>
+      <a href="courses.php" class="inline-option-btn">view all courses</a>
    </div>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <footer class="footer">
-
-   &copy; copyright @ 2024 by <span>RSL Pvt Lmt</span>  | all rights reserved!
-
-</footer> -->
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>

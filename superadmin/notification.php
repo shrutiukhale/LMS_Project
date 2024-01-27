@@ -5,111 +5,134 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-   <title>Notication</title>
+   <title>Notification</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
    <link rel="stylesheet" href="css/style.css">
    <style>
-      <style>body {
-         font-family: 'Nunito', sans-serif;
-         font-size: large;
-         margin: 0;
-         padding: 0;
-         background-color: #f4f4f4;
-         font-size: 16px;
-         font-weight: bold;
-
-      }
-
-      /* Header Styles */
-      .btn {
-         text-decoration: none;
-         background-color: #007bff;
-         color: #fff;
-         padding: 5px 10px;
-         border-radius: 5px;
-         margin-left: 10px;
-      }
-
-      .flex-btn {
-         margin-left: auto;
-      }
-
-      /* Notification Form Styles */
-      #notification-container {
-         display: flex;
-         justify-content: center;
-         /* align-items: center; */
-         /* height: 100vh; */
-      }
-
-      #notification-form {
-         max-width: 650px;
-         width: 100%;
-         padding: 20px;
-         background-color: #fff;
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-         border-radius: 8px;
-         text-align: center;
-      }
-
-      #notification-form h2 {
-         margin-bottom: 20px;
-         color: #333;
-      }
-
-      label {
-         display: block;
-         margin-bottom: 8px;
-         text-align: left;
-         color: #333;
-      }
-
-      select,
-      textarea {
-         width: 100%;
-         padding: 8px;
-         margin-bottom: 16px;
-         box-sizing: border-box;
-         border: 1px solid #ddd;
-         border-radius: 4px;
-         font-size: 16px;
-      }
-
-      button {
-         background-color: #007bff;
-         color: #fff;
-         padding: 10px 20px;
-         border: none;
-         border-radius: 5px;
-         cursor: pointer;
-         font-size: 16px;
-      }
-
-      button:hover {
-         background-color: #0056b3;
-      }
-
       body {
          font-family: 'Nunito', sans-serif;
          font-size: large;
+         margin: 20;
+         padding: 20;
+      }
+
+      #notification-form h2 {
+         text-align: center;
+      }
+
+      #notification-container {
+         max-width: 800px;
+         margin: 20px auto;
+         padding: 20px;
+         background-color: #fff;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         border-radius: 10px;
+         position: relative;
+      }
+
+      .notification {
+         margin-bottom: 15px;
+         padding: 15px;
+         border: 1px solid #ddd;
+         border-radius: 6px;
+         position: relative;
+         transition: background-color 0.3s ease;
+      }
+
+      .notification:hover {
+         background-color: #f9f9f9;
+      }
+
+      .notification.unread {
+         background-color: #e6f7ff;
+      }
+
+      .notification header {
+         font-size: 18px;
+         margin-bottom: 8px;
+      }
+
+      .notification time {
+         color: #888;
+         font-size: 12px;
+      }
+
+      #notification-count {
+         position: absolute;
+         top: 5px;
+         right: 5px;
+         background-color: #007bff;
+         color: #fff;
+         font-size: 12px;
+         padding: 5px 10px;
+         border-radius: 50%;
+      }
+
+      select,
+      button {
+         margin-top: 10px;
+      }
+
+      #notification-form {
+         max-width: 800px;
+         margin: 20px auto;
+         padding: 20px;
+         background-color: #fff;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         border-radius: 10px;
+      }
+
+      #notification-form label {
+         display: block;
+         margin-bottom: 8px;
+      }
+
+      #notification-form select,
+      #notification-form textarea {
+         width: 100%;
+         padding: 10px;
+         margin-bottom: 15px;
+         box-sizing: border-box;
+      }
+
+      #recipient-type {
+         border: 1px solid black;
+      }
+
+      #recipient {
+         border: 1px solid black;
+      }
+
+      #notification-message {
+         border: 1px solid black;
+      }
+
+
+
+      #notification-form button {
+         padding: 10px;
+         background-color: #007bff;
+         color: #fff;
+         border: none;
+         border-radius: 6px;
+         cursor: pointer;
+      }
+
+      #notification-form button:hover {
+         background-color: #0056b3;
       }
    </style>
 </head>
 
 <body>
-
+   <!-- Header Section -->
    <header class="header">
-
       <section class="flex">
-
-         <a href="home.html" class="logo">RSL Solution </a>
-
+         <a href="home.php" class="logo">RSL Solution</a>
          <form action="search.html" method="post" class="search-form">
-            <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+            <input type="text" name="search_box" required placeholder="search notification..." maxlength="100">
             <button type="submit" class="fas fa-search"></button>
          </form>
-
          <div class="icons">
             <div id="unread-count" class="fa-regular fa-bell"></div>
             <div id="menu-btn" class="fas fa-bars"></div>
@@ -117,78 +140,62 @@
             <div id="user-btn" class="fas fa-user"></div>
             <div id="toggle-btn" class="fas fa-sun"></div>
          </div>
-
-
          <div class="profile">
             <img src="images/pic-1.jpg" class="image" alt="">
             <p class="role">Super Admin </p>
-            <a href="profile.html" class="btn">view profile</a>
+            <a href="profile.php" class="btn">view profile</a>
             <div class="flex-btn">
                <a href="../index.php" class="option-btn">logout</a>
             </div>
          </div>
-
       </section>
-
    </header>
 
+   <!-- Sidebar Section -->
    <div class="side-bar">
-
       <div id="close-btn">
          <i class="fas fa-times"></i>
       </div>
-
-
       <div class="profile">
          <img src="images/pic-1.jpg" class="image" alt="">
          <p class="role">Super Admin </p>
       </div>
-
       <nav class="navbar">
-         <a href="home.php"><i class="fas fa-home"></i><span>home</span></a>
-         <!--Newly created-->
-         <a href="teachers.php"><i class="fas fa-chalkboard-user"></i><span>Admins</span></a>
-         <a href="courses.php"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
-         <!--Newly created-->
-         <a href="report.php"><i class="fa-regular fa-eye"></i><span>Reports</span></a>
-         <!--Newly created-->
-         <a href="notification.php"><i class="fa-regular fa-bell"></i><span>Notification</span></a>
-         <!--<a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a>
-    <a href="about.html"><i class="fas fa-question"></i><span>about</span></a>-->
+         <a href="home.html"><i class="fas fa-home"></i><span>home</span></a>
+         <a href="teachers.html"><i class="fas fa-chalkboard-user"></i><span>Admins</span></a>
+         <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+         <a href="report.html"><i class="fa-regular fa-eye"></i><span>Reports</span></a>
+         <a href="notification.html"><i class="fa-regular fa-bell"></i><span>Notification</span></a>
       </nav>
-
    </div>
-   <div id="notification-container" class="notification-container">
-      <!-- Notification Form -->
-      <div id="notification-form">
-         <h2 style="text-align:center">Send Notification</h2>
 
-         <label for="recipient-type">Select Recipient Type:</label>
-         <select id="recipient-type ">
-            <option value="admins">Admins</option>
-            <option value="admin wise student">Admin wise student</option>
-            <option value="all students">all students</option>
-            <option value="java-course">Java Course Students</option>
-            <option value="python-course">Python Course Students</option>
-            <option value="c-course">C Course Students</option>
-         </select>
-         <br>
-         <label for="recipient-type">Select Recipient:</label>
-         <select id="recipient-type">
-            <option value="admins">Admin 1</option>
-         </select>
-         <br>
-         <label for="notification-message">Notification Message:</label>
-         <textarea id="notification-message" rows="6"></textarea>
-         <br>
-         <button onclick="sendNotification()" class="inline-btn">Send Notification</button>
-      </div>
-
-      <!-- Unread Notification Count -->
-      <div id="unread-count" class="unread-count"></div>
-
-      <!-- Notification Container -->
+   <!-- Notification Form and Container Section -->
+   <div id="notification-form">
+      <h2>Send Notification</h2>
+      <label for="recipient-type">Select Recipient Type:</label>
+      <select id="recipient-type">
+         <option value="admins">Admins</option>
+         <option value="admin wise student">Admin wise student</option>
+         <option value="all students">all students</option>
+         <option value="java-course">Java Course Students</option>
+         <option value="python-course">Python Course Students</option>
+         <option value="c-course">C Course Students</option>
+      </select>
+      <br>
+      <label for="recipient">Select Recipient:</label>
+      <select id="recipient"></select>
+      <br>
+      <label for="notification-message">Notification Message:</label>
+      <textarea id="notification-message" rows="5"></textarea>
+      <br>
+      <button onclick="sendNotification()" class="inline-btn">Send Notification</button>
    </div>
+
+   <!-- Unread Notification Count -->
+   <div id="unread-count" class="unread-count"></div>
+
+   <!-- Notification Container -->
+   <div id="notification-container" class="notification-container"></div>
 
    <script>
       // Sample data for recipients
@@ -267,9 +274,9 @@
       updateRecipients();
    </script>
 
-   <!-- custom js file link  -->
+   <!-- Custom JS file link -->
    <script src="js/script.js"></script>
-
+   <?php include 'sidebar.php'; ?>
 
 </body>
 

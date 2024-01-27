@@ -19,7 +19,7 @@
    
    <section class="flex">
 
-      <a href="home.html" class="logo">RSL Solution</a>
+      <a href="home.php" class="logo">RSL Solution</a>
 
       <form action="search.html" method="post" class="search-form">
          <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
@@ -67,7 +67,7 @@
             <span>10 videos</span>
          </div>
          <h3 class="title">complete HTML tutorial</h3>
-         <a href="playlist.html" class="inline-btn">view playlist</a>
+         <a href="playlist.php" class="inline-btn">view playlist</a>
       </div>
 
       <div class="box">
@@ -83,7 +83,7 @@
             <span>10 videos</span>
          </div>
          <h3 class="title">complete CSS tutorial</h3>
-         <a href="playlist.html" class="inline-btn">view playlist</a>
+         <a href="playlist.php" class="inline-btn">view playlist</a>
       </div>
 
       <div class="box">
@@ -99,11 +99,13 @@
             <span>10 videos</span>
          </div>
          <h3 class="title">complete JS tutorial</h3>
-         <a href="playlist.html" class="inline-btn">view playlist</a>
+         <a href="playlist.php" class="inline-btn">view playlist</a>
       </div>
+
    </div>
 
 </section>
+
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
 

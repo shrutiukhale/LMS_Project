@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
         <body>
             <header class="header">
                 <section class="flex">
-                    <a href="home.html" class="logo"> RSL Solution </a>
+                    <a href="home.php" class="logo"> RSL Solution </a>
                     <form action="search.html" method="post" class="search-form">
                         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
                         <button type="submit" class="fas fa-search"></button>
@@ -41,7 +41,7 @@ if (isset($_GET['id'])) {
                     <div class="profile">
                         <img src="images/pic-1.jpg" class="image" alt="">
                         <p class="role">Super Admin</p>
-                        <a href="profile.html" class="btn">View Profile</a>
+                        <a href="profile.php" class="btn">View Profile</a>
                         <div class="flex-btn">
                             <a href="../index.php" class="option-btn">Logout</a>
                         </div>
@@ -57,13 +57,7 @@ if (isset($_GET['id'])) {
                     <img src="images/pic-1.jpg" class="image" alt="">
                     <p class="role">Super Admin</p>
                 </div>
-                <nav class="navbar">
-                    <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
-                    <a href="teachers.php"><i class="fas fa-chalkboard-user"></i><span>Admins</span></a>
-                    <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
-                    <a href="report.html"><i class="fa-regular fa-eye"></i><span>Reports</span></a>
-                    <a href="notification.html"><i class="fa-regular fa-bell"></i><span>Notification</span></a>
-                </nav>
+               
             </div>
 
             <section class="teacher-profile">
@@ -81,6 +75,8 @@ if (isset($_GET['id'])) {
             </section>
 
             <script src="js/script.js"></script>
+            
+<?php include 'sidebar.php'; ?>
         </body>
 
         </html>
