@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($conn->query($sql) === TRUE) {
             echo "<script>alert('Registration successful!');</script>";
-            echo "<script>window.location = 'login.html';</script>";
+            echo "<script>window.location = 'students.php';</script>";
         } else {
             if ($conn->error) {
                 $errors[] = "Error: " . $sql . "<br>" . $conn->error;

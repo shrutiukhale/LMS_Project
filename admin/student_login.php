@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $trimmedPassword = trim($password);
                 if (password_verify($trimmedPassword, $row['password'])) {
                     echo "<script>alert('Logged in successfully!');</script>";
-                    echo "<script>window.location = 'students.php';</script>";
+                    echo "<script>window.location = '../student/home.php';</script>";
                 } else {
                     echo "<script>alert('Incorrect password.');</script>";
                     echo "<script>window.location = 'login.html';</script>";
