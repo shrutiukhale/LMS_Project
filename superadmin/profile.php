@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,61 +14,31 @@
    <link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
+   <?php include 'header.php'; ?>
+   <section class="user-profile">
 
-<header class="header">
-   
-   <section class="flex">
+      <h1 class="heading">your profile</h1>
 
-      <a href="home.html" class="logo">RSL Solution</a>
+      <div class="info">
 
-      <form action="search.html" method="post" class="search-form">
-         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
-         <button type="submit" class="fas fa-search"></button>
-      </form>
+         <div class="user">
+            <img src="images/pic-1.jpg" alt="">
+            <h3>Super Admin name</h3>
+            <p>Super Admin</p>
 
-      <div class="icons">
-         <div id="menu-btn" class="fas fa-bars"></div>
-         <div id="search-btn" class="fas fa-search"></div>
-         <div id="user-btn" class="fas fa-user"></div>
-         <div id="toggle-btn" class="fas fa-sun"></div>
-      </div>
-
-      <div class="profile">
-         <img src="images/pic-1.jpg" class="image" alt="">
-         <!-- <h3 class="name">Super Admin name</h3> -->
-         <p class="role">Super Admin</p>
-         <a href="profile.php" class="btn">view profile</a>
-         <div class="flex-btn">
-            <a href="../index.php" class="option-btn">logout</a>
          </div>
+
       </div>
 
    </section>
 
-</header>   
+   <!-- custom js file link  -->
+   <script src="js/script.js"></script>
 
-<section class="user-profile">
+   <?php include 'sidebar.php'; ?>
 
-   <h1 class="heading">your profile</h1>
-
-   <div class="info">
-
-      <div class="user">
-         <img src="images/pic-1.jpg" alt="">
-         <!-- <h3>Super Admin name</h3> -->
-         <p>Super Admin</p>
-         <a href="update.php" class="inline-btn">update profile</a>
-      </div>
-   
-   </div> 
-
-</section>
-
-<!-- custom js file link  -->
-<script src="js/script.js"></script>
-
-<?php include 'sidebar.php'; ?>
-   
 </body>
+
 </html>

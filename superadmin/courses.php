@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,104 +14,173 @@
    <link rel="stylesheet" href="css/style.css">
 
 </head>
+<style>
+   body {
+      font-family: 'Nunito', sans-serif;
+      font-size: large;
+   }
+
+   #courseAssignment {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      margin: 20px auto;
+   }
+
+   #courseAssignment h2 {
+      text-align: center;
+      color: #333;
+   }
+
+   #assignmentForm {
+      display: flex;
+      flex-direction: column;
+   }
+
+   label {
+      margin-bottom: 8px;
+   }
+
+   select,
+   input,
+   button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+   }
+
+   button {
+      background-color: #4caf50;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+   }
+
+   button:hover {
+      background-color: #45a049;
+   }
+
+   #course-form h2 {
+      text-align: center;
+   }
+
+   select,
+   input,
+   button {
+      margin-top: 10px;
+   }
+
+   #course-form label {
+      display: block;
+      margin-bottom: 8px;
+   }
+
+   #course-form select,
+   #course-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+   }
+
+   #assign-admin {
+      border: 1px solid black;
+   }
+
+   #link {
+      border: 1px solid black;
+   }
+
+   #course-form button {
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+   }
+
+   #course-form button:hover {
+      background-color: #0056b3;
+   }
+</style>
+
 <body>
 
-<header class="header">
-   
-   <section class="flex">
+<?php include 'header.php'; ?>
 
-      <a href="home.php" class="logo">RSL Solution</a>
+    <!-- Menu Section -->
+   <div id="courseAssignment">
+      <h2>Assign Courses to Admin</h2>
+      <br>
+      <form id="assignmentForm">
+         <div id="course-form">
 
-      <form action="search.html" method="post" class="search-form">
-         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
-         <button type="submit" class="fas fa-search"></button>
+            <label for="assign-admin">Select Recipient Type:</label>
+            <select id="assign-admin">
+               <option value="alladmins">All Admins</option>
+               <option value="admin1">Admin1 </option>
+               <option value="admins">Admin2</option>
+               <option value="admins">Admin3</option>
+               <option value="admins">Admin4</option>
+               <option value="admins">Admin5</option>
+            </select>
+            <br>
+            <label for="link">Course Link:</label>
+            <input type="text" id="link" placeholder="Enter Course link here..">
+            <br>
+            <label for="link">Practical Link:</label>
+            <input type="text" id="link" placeholder="Enter Practical link here..">
+            <br>
+            <button onclick="assignCourse()" class="inline-btn">Assign Course</button>
+         </div>
       </form>
 
-      <div class="icons">
-         <div id="menu-btn" class="fas fa-bars"></div>
-         <div id="search-btn" class="fas fa-search"></div>
-         <div id="user-btn" class="fas fa-user"></div>
-         <div id="toggle-btn" class="fas fa-sun"></div>
-      </div>
+      <script>
+         function assignCourse() {
+            // Get form elements
+            var recipientType = document.getElementById('recipient-type').value;
+            var courseLink = document.getElementById('link').value.trim();
+            var practicalLink = document.getElementById('pracLink').value.trim();
 
-      <div class="profile">
-         <img src="images/pic-1.jpg" class="image" alt="">
-         <!-- <h3 class="name">Super Admin name</h3> -->
-         <p class="role">Super Admin</p>
-         <a href="profile.php" class="btn">view profile</a>
-         
-         <div class="flex-btn">
-            <a href="../index.php" class="option-btn">logout</a>
-         </div>
-      </div>
+            // Simple form validation
+            if (!recipientType || !courseLink || !practicalLink) {
+               alert('Please fill out all fields before assigning the course.');
+               return;
+            }
 
-   </section>
+            // Implement logic to send data to the backend
+            // Example using fetch API
+            fetch('', {
+               method: 'POST',
+               headers: {
+                  'Content-Type': 'application/json',
+               },
+               body: JSON.stringify({
+                  recipientType: recipientType,
+                  courseLink: courseLink,
+                  practicalLink: practicalLink,
+               }),
+            })
+               .then(response => response.json())
+               .then(data => {
+                  console.log('Course assigned successfully:', data);
+                  // You can add further actions here if needed
+               })
+               .catch(error => {
+                  console.error('Error assigning course:', error);
+               });
+         }
+      </script>
 
-</header>   
+      <?php include 'sidebar.php'; ?>
 
-<section class="courses">
 
-   <h1 class="heading">our courses</h1>
 
-   <div class="box-container">
-
-      <div class="box">
-         <div class="tutor">
-            <img src="images/pic-2.jpg" alt="">
-            <div class="info">
-               <h3>Admin1</h3>
-               <span>05-01-2024</span>
-            </div>
-         </div>
-         <div class="thumb">
-            <img src="images/thumb-1.png" alt="">
-            <span>10 videos</span>
-         </div>
-         <h3 class="title">complete HTML tutorial</h3>
-         <a href="playlist.php" class="inline-btn">view playlist</a>
-      </div>
-
-      <div class="box">
-         <div class="tutor">
-            <img src="images/pic-3.jpg" alt="">
-            <div class="info">
-               <h3>Admin2</h3>
-               <span>05-01-2024</span>
-            </div>
-         </div>
-         <div class="thumb">
-            <img src="images/thumb-2.png" alt="">
-            <span>10 videos</span>
-         </div>
-         <h3 class="title">complete CSS tutorial</h3>
-         <a href="playlist.php" class="inline-btn">view playlist</a>
-      </div>
-
-      <div class="box">
-         <div class="tutor">
-            <img src="images/pic-4.jpg" alt="">
-            <div class="info">
-               <h3>Admin3</h3>
-               <span>05-01-2024</span>
-            </div>
-         </div>
-         <div class="thumb">
-            <img src="images/thumb-3.png" alt="">
-            <span>10 videos</span>
-         </div>
-         <h3 class="title">complete JS tutorial</h3>
-         <a href="playlist.php" class="inline-btn">view playlist</a>
-      </div>
-
-   </div>
-
-</section>
-
-<!-- custom js file link  -->
-<script src="js/script.js"></script>
-
-<?php include 'sidebar.php'; ?>
-
-   
 </body>
+
 </html>

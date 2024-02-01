@@ -277,7 +277,7 @@ section{
 }
 
 .side-bar .profile{
-   padding:3rem 2rem;
+   padding:1.5rem 2rem;
    text-align: center;
 }
 
@@ -1234,7 +1234,7 @@ section{
 
 .form-container{
    min-height: calc(100vh - 20rem);
-   display: flex;
+   display: grid;
    align-items: center;
    justify-content: center;
 }
