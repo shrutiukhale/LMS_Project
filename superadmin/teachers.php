@@ -32,7 +32,7 @@
       <div class="box offer">
          <h3>Add a Admins</h3><!--Newly created-->
          <p>..........</p>
-         <a href="register.html" class="inline-btn">Add Admin</a>
+         <a href="register.php" class="inline-btn">Add Admin</a>
       </div>
 
 
