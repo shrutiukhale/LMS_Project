@@ -59,3 +59,35 @@ window.onload = function() {
        }
    };
 };
+
+function sendNotificationBySuperadmin(){
+    console.log('sendNotification function called');
+          
+    var recipientType = document.getElementById('recipient-type').value;
+    var recipient = document.getElementById('recipient').value;
+    var message = document.getElementById('notification-message').value.trim();
+
+    // Check if the message is not empty
+    if (!message) {
+        alert('Please enter a notification message.');
+        return;
+    }
+
+    // Get the selected admin ID
+    var adminId = document.getElementById('recipient-type').value;
+
+    // Get the selected course ID
+    var courseId = document.getElementById('recipient').value;
+    
+    // Make an AJAX request to superadmin_insert_notification.php
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'superadmin_insert_notification.php', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            // Display success message or handle any other response
+            alert(xhr.responseText);
+        }
+    };
+    xhr.send('admin_id=' + encodeURIComponent(adminId) + '&course_id=' + encodeURIComponent(courseId) + '&message=' + encodeURIComponent(message));
+}

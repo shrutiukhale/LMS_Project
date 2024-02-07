@@ -2,7 +2,7 @@
 <?php
 session_start();
 
-$user_id = $_SESSION['user_id'];
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
 $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : '';
 $user_email = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : '';
 $user_image = isset($_SESSION['user_image']) ? $_SESSION['user_image'] : '';
