@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+// Assuming you have a database connection established in 'db_connection.php'
+include 'connect_db.php';
+
+$st_id = $_SESSION['st_id'];
+$st_name = isset($_SESSION['st_name']) ? $_SESSION['st_name'] : '';
+$user_email = isset($_SESSION['st_email']) ? $_SESSION['st_email'] : '';
+$user_image = isset($_SESSION['st_image']) ? $_SESSION['st_image'] : '';
+
+?>
+
 <header class="header">
    <section class="flex">
       <a href="home.php" class="logo">RSL Solution</a>
@@ -23,8 +36,8 @@
 
       </div> -->
       <div class="profile">
-         <img src="images/pic-1.jpg" class="image" alt="">
-         <p class="role">RSL Student</p>
+      <img src="images/pic-5.jpg" class="image" alt="">
+         <p class="role"><?php echo $st_name; ?></p>
          <a href="profile.php" class="btn">view profile</a>
          <div class="flex-btn">
             <a href="../admin/login.html" class="option-btn">logout</a>
