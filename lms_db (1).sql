@@ -71,28 +71,6 @@ INSERT INTO `courses` (`id`, `coursename`, `coursedescription`, `courselink`, `p
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `profileupdate`
---
-
-CREATE TABLE `profileupdate` (
-  `id` int(10) NOT NULL,
-  `name` varchar(25) NOT NULL,
-  `email` varchar(25) NOT NULL,
-  `phone` varchar(25) NOT NULL,
-  `password` varchar(25) NOT NULL,
-  `profile_image` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `profileupdate`
---
-
-INSERT INTO `profileupdate` (`id`, `name`, `email`, `phone`, `password`, `profile_image`) VALUES
-(1, 'Shrutika Ramdas Munde', 'mundesarutika@gmail.com', '9067137698', 'shrutika', ''),
-(2, 'Shrutika Ramdas Munde', 'mundesarutika@gmail.com', '9067137698', 'shrutika', ''),
-(3, '', '', '', '', '');
-
 -- --------------------------------------------------------
 
 --
