@@ -4,7 +4,7 @@
     </div> 
     <div class="profile">
          <img src="images/pic-5.jpg" class="image" alt="">
-         <p class="role">RSL Student</p>
+         <p class="role"><?php echo $st_name; ?></p>
       </div>
       <nav class="navbar">
       <a href="home.php"><i class="fas fa-home"></i><span>home</span></a>
