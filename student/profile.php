@@ -50,7 +50,7 @@ $user_image = isset($_SESSION['st_image']) ? $_SESSION['st_image'] : '';
          </div>
 
          <div class="profile">
-            <img src="<?php echo $image; ?>" class="image" alt="User Image">
+            <!--<img src="<?php echo $image; ?>" class="image" alt="User Image">-->
             <p class="role"><?php echo $st_name; ?></p>
             <a href="profile.php" class="btn">View Profile</a>
             <div class="flex-btn">
