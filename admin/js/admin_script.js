@@ -152,3 +152,32 @@ window.onload = function() {
        }
    };
 };
+
+function sendNotificationByAdmin(){
+   console.log('sendNotification function called');
+
+   var recipient = document.getElementById('recipient').value;
+   var message = document.getElementById('notification-message').value.trim();
+
+   // Check if the message is not empty
+   if (!message) {
+       alert('Please enter a notification message.');
+       return;
+   }
+
+   // Get the selected course ID
+   var courseId = document.getElementById('recipient').value;
+   
+   // Make an AJAX request to admin_insert_notification.php
+   var xhr = new XMLHttpRequest();
+   xhr.open('POST', 'admin_insert_notification.php', true);
+   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+   xhr.onreadystatechange = function () {
+       if (xhr.readyState == 4 && xhr.status == 200) {
+           // Display success message or handle any other response
+           alert(xhr.responseText);
+       }
+   };
+   xhr.send('&course_id=' + encodeURIComponent(courseId) + '&message=' + encodeURIComponent(message));
+}
+
